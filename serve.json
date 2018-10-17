@@ -1,4 +1,7 @@
 {
     "directoryListing": false,
-    "cleanUrls": false
+    "cleanUrls": false,
+    "rewrites": [
+        { "source": "/", "destination": "/index.html" }
+      ]
 }
