@@ -178,7 +178,7 @@ nav h1 a {
 
 /* ====================== Restaurant Details ====================== */
 
-.inside header {
+header {
     position: fixed;
     top: 0;
     width: 100%;
