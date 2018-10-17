@@ -3,10 +3,6 @@
  */
 class DBHelper {
 
-    /**
-     * Database URL.
-     * Change this to restaurants.json file location on your server.
-     */
     static get DATABASE_URL() {
         return '/data/restaurants.json';
     }
@@ -18,11 +14,11 @@ class DBHelper {
         let xhr = new XMLHttpRequest();
         xhr.open('GET', DBHelper.DATABASE_URL);
         xhr.onload = () => {
-            if (xhr.status === 200) { // Got a success response from server!
+            if (xhr.status === 200) {
                 const json = JSON.parse(xhr.responseText);
                 const restaurants = json.restaurants;
                 callback(null, restaurants);
-            } else { // Oops!. Got an error from server.
+            } else {
                 const error = (`Request failed. Returned status of ${xhr.status}`);
                 callback(error, null);
             }
@@ -163,19 +159,9 @@ class DBHelper {
                 alt: restaurant.name,
                 url: DBHelper.urlForRestaurant(restaurant)
             })
-        marker.addTo(newMap);
+        marker.addTo(map);
         return marker;
     }
-    /* static mapMarkerForRestaurant(restaurant, map) {
-      const marker = new google.maps.Marker({
-        position: restaurant.latlng,
-        title: restaurant.name,
-        url: DBHelper.urlForRestaurant(restaurant),
-        map: map,
-        animation: google.maps.Animation.DROP}
-      );
-      return marker;
-    } */
 
 }
 

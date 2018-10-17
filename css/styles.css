@@ -17,6 +17,26 @@ a:hover, a:focus {
    Header
    ========================================================================== */
 
+.header {
+}
+
+.header__title {
+    margin:0;
+    padding:12px 0;
+    font-size:24px;
+    background-color:#333;
+    color:#fff;
+    text-align:center;
+    text-decoration:none;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.header__title a {
+    color:inherit;
+    text-decoration:inherit;
+}
 
 #maincontent {
     background-color: #f3f3f3;
@@ -182,13 +202,6 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Details ====================== */
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
 
 .inside #map-container {
     background: blue none repeat scroll 0 0;

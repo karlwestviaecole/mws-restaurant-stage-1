@@ -1,5 +1,5 @@
-let restaurant;
-var newMap;
+let restaurant,
+    newMap;
 
 /**
  * Initialize map as soon as the page is loaded.
@@ -16,7 +16,7 @@ initMap = () => {
         if (error) { // Got an error!
             console.error(error);
         } else {
-            self.newMap = L.map('map', {
+            newMap = L.map('map', {
                 center: [restaurant.latlng.lat, restaurant.latlng.lng],
                 zoom: 16,
                 scrollWheelZoom: false
@@ -30,33 +30,17 @@ initMap = () => {
                 id: 'mapbox.streets'
             }).addTo(newMap);
             fillBreadcrumb();
-            DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
+            DBHelper.mapMarkerForRestaurant(restaurant, newMap);
         }
     });
 }
-
-/* window.initMap = () => {
-  fetchRestaurantFromURL((error, restaurant) => {
-    if (error) { // Got an error!
-      console.error(error);
-    } else {
-      self.map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: restaurant.latlng,
-        scrollwheel: false
-      });
-      fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
-    }
-  });
-} */
 
 /**
  * Get current restaurant from page URL.
  */
 fetchRestaurantFromURL = (callback) => {
-    if (self.restaurant) { // restaurant already fetched!
-        callback(null, self.restaurant)
+    if (restaurant) { // restaurant already fetched!
+        callback(null, restaurant)
         return;
     }
     const id = getParameterByName('id');
@@ -65,7 +49,7 @@ fetchRestaurantFromURL = (callback) => {
         callback(error, null);
     } else {
         DBHelper.fetchRestaurantById(id, (error, restaurant) => {
-            self.restaurant = restaurant;
+            restaurant = restaurant;
             if (!restaurant) {
                 console.error(error);
                 return;
@@ -79,9 +63,9 @@ fetchRestaurantFromURL = (callback) => {
 /**
  * Create restaurant HTML and add it to the webpage
  */
-fillRestaurantHTML = (restaurant = self.restaurant) => {
+fillRestaurantHTML = () => {
     const name = document.getElementById('restaurant-name');
-    name.innerHTML = restaurant.name;
+    name.innerHTML = window.restaurant.name;
 
     const address = document.getElementById('restaurant-address');
     address.innerHTML = restaurant.address;
@@ -104,7 +88,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 /**
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
-fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
+fillRestaurantHoursHTML = (operatingHours = restaurant.operating_hours) => {
     const hours = document.getElementById('restaurant-hours');
     for (let key in operatingHours) {
         const row = document.createElement('tr');
@@ -124,7 +108,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 /**
  * Create all reviews HTML and add them to the webpage.
  */
-fillReviewsHTML = (reviews = self.restaurant.reviews) => {
+fillReviewsHTML = (reviews = restaurant.reviews) => {
     const container = document.getElementById('reviews-container');
     const title = document.createElement('h2');
     title.innerHTML = 'Reviews';
@@ -170,7 +154,7 @@ createReviewHTML = (review) => {
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
-fillBreadcrumb = (restaurant = self.restaurant) => {
+fillBreadcrumb = (restaurant = restaurant) => {
     const breadcrumb = document.getElementById('breadcrumb');
     const li = document.createElement('li');
     li.innerHTML = restaurant.name;
