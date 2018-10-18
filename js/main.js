@@ -2,7 +2,7 @@
    Context
    ========================================================================== */
 
-window.context = {
+let context = {
     restaurants: null,
     neighborhoods: null,
     cuisines: null,
@@ -70,7 +70,7 @@ const updateRestaurants = function () {
 
 
 /* ==========================================================================
-   updateRestaurants
+   resetRestaurants
    ========================================================================== */
 
 const resetRestaurants = function (restaurants) {
@@ -162,27 +162,32 @@ const fillRestaurantsHTML = function () {
 
 const createRestaurantHTML = function (restaurant) {
     const li = document.createElement('li');
+    li.className = 'restaurant';
 
     const image = document.createElement('img');
-    image.className = 'restaurant-img';
+    image.className = 'restaurant__image';
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
     li.append(image);
 
     const name = document.createElement('h1');
     name.innerHTML = restaurant.name;
+    name.className = 'restaurant__name';
     li.append(name);
 
     const neighborhood = document.createElement('p');
     neighborhood.innerHTML = restaurant.neighborhood;
+    neighborhood.className = 'restaurant__paragraph';
     li.append(neighborhood);
 
     const address = document.createElement('p');
     address.innerHTML = restaurant.address;
+    address.className = 'restaurant__paragraph';
     li.append(address);
 
     const more = document.createElement('a');
     more.innerHTML = 'View Details';
     more.href = DBHelper.urlForRestaurant(restaurant);
+    more.className = 'restaurant__more-link';
     li.append(more)
 
     return li

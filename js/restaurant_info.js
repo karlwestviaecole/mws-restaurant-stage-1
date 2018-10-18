@@ -2,7 +2,7 @@
    Context
    ========================================================================== */
 
-window.context = {
+let context = {
     restaurant: null,
     newMap: null
 };
