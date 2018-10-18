@@ -83,7 +83,6 @@ const fillRestaurantHTML = function () {
     address.innerHTML = context.restaurant.address;
 
     const image = document.getElementById('restaurant-img');
-    image.className = 'restaurant-img'
     image.src = DBHelper.imageUrlForRestaurant(context.restaurant);
 
     const cuisine = document.getElementById('restaurant-cuisine');
