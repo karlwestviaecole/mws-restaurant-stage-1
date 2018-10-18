@@ -123,9 +123,6 @@ const fillRestaurantHoursHTML = function () {
 
 const fillReviewsHTML = function () {
     const container = document.getElementById('reviews-container');
-    const title = document.createElement('h2');
-    title.innerHTML = 'Reviews';
-    container.appendChild(title);
 
     if (!context.restaurant.reviews) {
         const noReviews = document.createElement('p');
@@ -133,6 +130,7 @@ const fillReviewsHTML = function () {
         container.appendChild(noReviews);
         return;
     }
+
     const ul = document.getElementById('reviews-list');
     context.restaurant.reviews.forEach(review => {
         ul.appendChild(createReviewHTML(review));
@@ -147,21 +145,35 @@ const fillReviewsHTML = function () {
 
 const createReviewHTML = function (review) {
     const li = document.createElement('li');
+    li.className = 'reviews__item';
+
+    const header = document.createElement('div');
+    header.className = 'reviews__item-header';
+    li.appendChild(header);
+
     const name = document.createElement('p');
+    name.className = 'reviews__item-name';
     name.innerHTML = review.name;
-    li.appendChild(name);
+    header.appendChild(name);
 
     const date = document.createElement('p');
+    date.className = 'reviews__item-date';
     date.innerHTML = review.date;
-    li.appendChild(date);
+    header.appendChild(date);
+
+    const body = document.createElement('div');
+    body.className = 'reviews__item-body';
+    li.appendChild(body);
 
     const rating = document.createElement('p');
+    rating.className = 'reviews__item-rating';
     rating.innerHTML = `Rating: ${review.rating}`;
-    li.appendChild(rating);
+    body.appendChild(rating);
 
     const comments = document.createElement('p');
+    comments.className = 'reviews__item-comments';
     comments.innerHTML = review.comments;
-    li.appendChild(comments);
+    body.appendChild(comments);
 
     return li;
 };
