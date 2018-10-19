@@ -84,6 +84,7 @@ const fillRestaurantHTML = function () {
 
     const image = document.getElementById('restaurant-img');
     image.src = DBHelper.imageUrlForRestaurant(context.restaurant);
+    image.alt = 'Restaurant ' + context.restaurant.name;
 
     const cuisine = document.getElementById('restaurant-cuisine');
     cuisine.innerHTML = context.restaurant.cuisine_type;
