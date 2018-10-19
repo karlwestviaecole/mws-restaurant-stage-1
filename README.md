@@ -1,32 +1,43 @@
-# Mobile Web Specialist Certification Course
----
-#### _Three Stage Course Material Project - Restaurant Reviews_
+# Restaurant Reveiw App
 
-## Project Overview: Stage 1
+## About
 
-For the **Restaurant Reviews** projects, you will incrementally convert a static webpage to a mobile-ready web application. In **Stage One**, you will take a static design that lacks accessibility and convert the design to be responsive on different sized displays and accessible for screen reader use. You will also add a service worker to begin the process of creating a seamless offline experience for your users.
+This project was developed as a submission for the Front-End Web Developer Nanodegree Program at [Udacity](https://udacity.com). This project is not maintained.
 
-### Specification
+## Dependencies
 
-You have been provided the code for a restaurant reviews website. The code has a lot of issues. It’s barely usable on a desktop browser, much less a mobile device. It also doesn’t include any standard accessibility features, and it doesn’t work offline at all. Your job is to update the code to resolve these issues while still maintaining the included functionality. 
+* [normalize.css](https://github.com/necolas/normalize.css)
+* [Leaflet](https://github.com/Leaflet/Leaflet)
+* [Serve](https://github.com/zeit/serve)
 
-### What do I do from here?
+## Run the app
 
-1. In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer. 
+Install the serve npm globally:
+```
+npm install -g serve
+```
 
-In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
+Start serve from the root folder of this project:
+```
+serve
+```
 
-2. With your server running, visit the site: `http://localhost:8000`, and look around for a bit to see what the current experience looks like.
-3. Explore the provided code, and start making a plan to implement the required features in three areas: responsive design, accessibility and offline use.
-4. Write code to implement the updates to get this site on its way to being a mobile-ready website.
+With your browser, navigate to:
+```
+http://localhost:5000/
+```
 
-## Leaflet.js and Mapbox:
-
-This repository uses [leafletjs](https://leafletjs.com/) with [Mapbox](https://www.mapbox.com/). You need to replace `<your MAPBOX API KEY HERE>` with a token from [Mapbox](https://www.mapbox.com/). Mapbox is free to use, and does not require any payment information. 
-
-### Note about ES6
-
-Most of the code in this project has been written to the ES6 JavaScript specification for compatibility with modern web browsers and future proofing JavaScript code. As much as possible, try to maintain use of ES6 in any additional JavaScript you write. 
+The app uses a service worker to cache all it's assets. So when you've navigated to the app, you can stop the server and still use the app.
 
 
+## How the app works
 
+The start page shows a map with markers for some restaurants in New York. You can click on a marker to navigation to the details page for that restaurant.
+
+Below the map is a grid with some information cards for each restaurant. Use the dropdown controls to filter the cards in the grid. Each card has a link that will take you the the details page for that restaurant.
+
+On the detals page, you'll see that restaurant on a map. There is information about the restaurant and a list of reviews for that restaurant.
+
+## Contributing
+
+Since this repository basically is a submission to an online course, pull requests will likely not be merged into the project.
