@@ -149,8 +149,9 @@ const fillCuisinesHTML = function () {
 
 const fillRestaurantsHTML = function () {
     const ul = document.getElementById('restaurants-list');
+    let tabIndex = maxTabIndex();
     context.restaurants.forEach(restaurant => {
-        ul.append(createRestaurantHTML(restaurant));
+        ul.append(createRestaurantHTML(restaurant, tabIndex++));
     });
     addMarkersToMap();
 };
@@ -160,7 +161,7 @@ const fillRestaurantsHTML = function () {
    createRestaurantHTML
    ========================================================================== */
 
-const createRestaurantHTML = function (restaurant) {
+const createRestaurantHTML = function (restaurant, tabIndex) {
     const li = document.createElement('li');
     li.className = 'restaurant-card';
 
@@ -195,9 +196,10 @@ const createRestaurantHTML = function (restaurant) {
     more.innerHTML = 'View Details';
     more.href = DBHelper.urlForRestaurant(restaurant);
     more.className = 'restaurant-card__more-link';
+    more.tabIndex = tabIndex;
     article.append(more)
 
-    return li
+    return li;
 };
 
 
@@ -214,4 +216,19 @@ const addMarkersToMap = function () {
         }
         context.markers.push(marker);
     });
+};
+
+
+/* ==========================================================================
+   maxTabIndex
+   ========================================================================== */
+
+const maxTabIndex = function () {
+    let max = 0;
+    const elementsWithTabIndex = document.querySelectorAll('[tabindex]');
+    elementsWithTabIndex.forEach(element => {
+        let tabIndexValue = parseInt(element.getAttribute('tabindex'));
+        if (tabIndexValue > max) max = tabIndexValue;
+    });
+    return max;
 };

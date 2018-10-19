@@ -18,20 +18,20 @@
 <body>
     <header class="header">
         <h1 class="header__title">
-            <a href="/">Restaurant Reviews</a>
+            <a tabindex="1" href="/">Restaurant Reviews</a>
         </h1>
     </header>
 
     <main id="maincontent">
         <section id="map-container" aria-label="Map with restaurants">
-            <div id="map" class="map" role="application"></div>
+            <div id="map" class="map" role="application" tabindex="2"></div>
         </section>
         <section aria-label="Filter restaurants">
             <div class="filter-options">
-                <select tabindex="1" id="neighborhoods-select" aria-label="Filter by neighborhood" name="neighborhoods" onchange="updateRestaurants()" class="filter-options__select">
+                <select tabindex="3" id="neighborhoods-select" aria-label="Filter by neighborhood" name="neighborhoods" onchange="updateRestaurants()" class="filter-options__select">
                     <option value="all">All Neighborhoods</option>
                 </select>
-                <select tabindex="1" id="cuisines-select" aria-label="Filter by cuisine" name="cuisines" onchange="updateRestaurants()" class="filter-options__select">
+                <select tabindex="4" id="cuisines-select" aria-label="Filter by cuisine" name="cuisines" onchange="updateRestaurants()" class="filter-options__select">
                     <option value="all">All Cuisines</option>
                 </select>
             </div>
