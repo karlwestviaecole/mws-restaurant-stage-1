@@ -164,31 +164,38 @@ const createRestaurantHTML = function (restaurant) {
     const li = document.createElement('li');
     li.className = 'restaurant-card';
 
+    const article = document.createElement('article');
+    article.setAttribute('aria-label', 'Restaurant');
+    li.append(article);
+
     const image = document.createElement('img');
     image.className = 'restaurant-card__image';
+    image.alt = 'Restaurant';
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
-    li.append(image);
+    article.append(image);
 
     const name = document.createElement('h1');
     name.innerHTML = restaurant.name;
     name.className = 'restaurant-card__name';
-    li.append(name);
+    article.append(name);
 
     const neighborhood = document.createElement('p');
     neighborhood.innerHTML = restaurant.neighborhood;
     neighborhood.className = 'restaurant-card__paragraph';
-    li.append(neighborhood);
+    neighborhood.setAttribute('aria-label', 'Neighborhood');
+    article.append(neighborhood);
 
     const address = document.createElement('p');
     address.innerHTML = restaurant.address;
     address.className = 'restaurant-card__paragraph';
-    li.append(address);
+    address.setAttribute('aria-label', 'Address');
+    article.append(address);
 
     const more = document.createElement('a');
     more.innerHTML = 'View Details';
     more.href = DBHelper.urlForRestaurant(restaurant);
     more.className = 'restaurant-card__more-link';
-    li.append(more)
+    article.append(more)
 
     return li
 };

@@ -147,31 +147,39 @@ const createReviewHTML = function (review) {
     const li = document.createElement('li');
     li.className = 'reviews__item';
 
+    const article = document.createElement('article');
+    article.setAttribute('aria-label', 'Review');
+    li.append(article);
+
     const header = document.createElement('div');
     header.className = 'reviews__item-header';
-    li.appendChild(header);
+    article.appendChild(header);
 
     const name = document.createElement('p');
     name.className = 'reviews__item-name';
+    name.setAttribute('aria-label', 'Author');
     name.innerHTML = review.name;
     header.appendChild(name);
 
     const date = document.createElement('p');
     date.className = 'reviews__item-date';
+    date.setAttribute('aria-label', 'Date');
     date.innerHTML = review.date;
     header.appendChild(date);
 
     const body = document.createElement('div');
     body.className = 'reviews__item-body';
-    li.appendChild(body);
+    article.appendChild(body);
 
     const rating = document.createElement('p');
     rating.className = 'reviews__item-rating';
+    rating.setAttribute('aria-label', 'Rating');
     rating.innerHTML = `Rating: ${review.rating}`;
     body.appendChild(rating);
 
     const comments = document.createElement('p');
     comments.className = 'reviews__item-comments';
+    comments.setAttribute('aria-label', 'Comments');
     comments.innerHTML = review.comments;
     body.appendChild(comments);
 

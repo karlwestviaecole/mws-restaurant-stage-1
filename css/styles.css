@@ -8,7 +8,7 @@ body {
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
     font-size: 16px;
     margin: 0;
-    background-color: #f7f7f7;
+    background-color: #f9f9f9;
     color: #222;
     position: relative;
 }
@@ -55,12 +55,12 @@ body {
 }
 
 .header__breadcrumb-list li a {
-    color: #0275d8;
+    color: #026AC5;
     text-decoration: none;
 }
 
 .header__breadcrumb-list li a:hover {
-    color: #0275d8;
+    color: #026AC5;
     text-decoration: underline;
 }
 
@@ -87,11 +87,12 @@ body {
 .filter-options__select {
     -moz-appearance: none;
     -webkit-appearance: none;
+    font-size: 16px;
     min-width: 148px;
-    height: 28px;
+    height: 32px;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAOVBMVEUAAAB3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d7JVYTAAAAEnRSTlMAARESExQWF0NOT4OIsO3v8fPb+ZyZAAAAV0lEQVQoz83JSxKAIAwE0VEI/jHO/Q/rQoqShL328jXwbUtwNK4ANmoyLsodQ6Y9ouQJxExeybgK3KlezuS9OY2/jvF6nJcze38OO15Ox4GY+w6EQ/CPbs9qBnqn6s1ZAAAAAElFTkSuQmCC);
     background-repeat: no-repeat;
-    background-position: right 6px top 8px;
+    background-position: right 6px top 10px;
     background-size: 12px 12px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, .5);
@@ -159,7 +160,7 @@ body {
 }
 
 .restaurant-card__name {
-    color: #f18200;
+    color: #BD6500;
     font-weight: 200;
     letter-spacing: 0;
     line-height: 1.3;
@@ -175,7 +176,7 @@ body {
 }
 
 .restaurant-card__more-link {
-    background-color: orange;
+    background-color: #854700;
     color: #fff;
     display: block;
     text-align: center;
@@ -205,7 +206,7 @@ body {
 }
 
 .restaurant-details__name {
-    color: #f18200;
+    color: #C76A00;
     font-weight: 200;
     letter-spacing: 0;
     margin: 32px 0;
@@ -306,6 +307,8 @@ body {
 .reviews__item-rating {
     display: inline-block;
     background-color: orange;
+    background-color: #C76A00;
+    background-color: #AD5C00;
     border-radius: 3px;
     padding: 4px 12px;
     color: #fff;
@@ -324,8 +327,8 @@ body {
    ========================================================================== */
 
 .footer {
-    background-color: #444;
-    color: #bbb;
+    background-color: #333;
+    color: #ddd;
     padding: 32px;
     text-align: center;
     text-transform: uppercase;
@@ -333,11 +336,11 @@ body {
 
 .footer__link {
     padding: 0 2px;
-    color: #f18200;
+    color: #FF961F;
     text-decoration: none;
 }
 
 .footer__link:hover {
-    color: #f18200;
+    color: #FF961F;
     text-decoration: underline;
 }
