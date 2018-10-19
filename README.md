@@ -32,11 +32,11 @@ The app uses a service worker to cache all it's assets. So when you've navigated
 
 ## How the app works
 
-The start page shows a map with markers for some restaurants in New York. You can click on a marker to navigation to the details page for that restaurant.
+The start page shows a map with markers for some restaurants in New York. You can click on a marker to navigate to the details page for that restaurant.
 
 Below the map is a grid with some information cards for each restaurant. Use the dropdown controls to filter the cards in the grid. Each card has a link that will take you the the details page for that restaurant.
 
-On the detals page, you'll see that restaurant on a map. There is information about the restaurant and a list of reviews for that restaurant.
+On the details page, you'll see that restaurant on a map. There is information about the restaurant and a list of reviews.
 
 ## Contributing
 
