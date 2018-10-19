@@ -170,11 +170,11 @@ const createRestaurantHTML = function (restaurant) {
 
     const image = document.createElement('img');
     image.className = 'restaurant-card__image';
-    image.alt = 'Restaurant';
+    image.alt = 'Restaurant ' + restaurant.name;
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
     article.append(image);
 
-    const name = document.createElement('h1');
+    const name = document.createElement('h3');
     name.innerHTML = restaurant.name;
     name.className = 'restaurant-card__name';
     article.append(name);
